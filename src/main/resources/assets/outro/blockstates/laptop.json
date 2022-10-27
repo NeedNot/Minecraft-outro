@@ -1,5 +1,6 @@
 {
   "variants": {
-    "": { "model": "outro:block/laptop" }
+    "paused=true": { "model": "outro:block/laptop" },
+    "paused=false": { "model": "outro:block/laptop_play" }
   }
 }
