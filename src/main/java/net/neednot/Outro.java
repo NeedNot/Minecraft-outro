@@ -20,6 +20,7 @@ public class Outro implements ModInitializer {
 	public static final Block lAPTOP = new Laptop(FabricBlockSettings.of(Material.METAL).strength(4.0f));
 	public static final Identifier OUTRO_MUSIC = new Identifier("outro:outro");
 	public static SoundEvent PLAY_OUTRO = new SoundEvent(OUTRO_MUSIC);
+	public static int RESET;
 
 	@Override
 	public void onInitialize() {

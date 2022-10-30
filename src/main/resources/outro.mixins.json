@@ -4,6 +4,7 @@
   "package": "net.neednot.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "SpriteMixin"
   ],
   "client": [
     "ClientPlayerEntityMixin"

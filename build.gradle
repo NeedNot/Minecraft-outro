@@ -20,6 +20,7 @@ repositories {
 		name "KosmX's maven"
 		url 'https://maven.kosmx.dev/'
 	}
+	mavenCentral()
 }
 
 dependencies {
@@ -35,7 +36,7 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	include modImplementation("dev.kosmx.player-anim:player-animation-lib-fabric:0.4.0-test1")
-	include runtimeOnly("io.github.kosmx.bendy-lib:bendy-lib-fabric:2.0.4")
+	modRuntimeOnly("io.github.kosmx.bendy-lib:bendy-lib-fabric:2.1.1")
 }
 
 processResources {

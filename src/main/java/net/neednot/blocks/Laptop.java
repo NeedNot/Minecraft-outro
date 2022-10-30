@@ -25,6 +25,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.neednot.ClientOutro;
 import net.neednot.Outro;
 
 
@@ -100,8 +101,11 @@ public class Laptop extends Block {
                 }
             } , pos);
         }
-        if (world.getBlockState(pos).get(PAUSED)) MinecraftClient.getInstance().getSoundManager().play(soundInstance);
-        else MinecraftClient.getInstance().getSoundManager().stopAll();
+        if (world.getBlockState(pos).get(PAUSED)) {
+            MinecraftClient.getInstance().getSoundManager().play(soundInstance);
+            if (world.isClient) Outro.RESET = 0;
+        }
+        else { MinecraftClient.getInstance().getSoundManager().stopAll(); if (world.isClient) Outro.RESET = 1;}
         world.setBlockState(pos, state.with(PAUSED, !world.getBlockState(pos).get(PAUSED)));
         return ActionResult.SUCCESS;
     }
