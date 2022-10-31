@@ -20,11 +20,11 @@ public abstract class SpriteMixin {
 
     @Inject(method = "tick()V", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
-        if (Outro.RESET != 0) {
+        MinecraftClient.getInstance().player.sendMessage(Text.literal(String.valueOf(Outro.RESET)));
+        if (MinecraftClient.getInstance().player.input.pressingLeft) {
             this.frameIndex = 0;
             this.frameTicks = 0;
-            MinecraftClient.getInstance().player.sendMessage(Text.literal(("reset")));
         }
-        System.out.println(this.frameTicks + " Frame ticks");
+        MinecraftClient.getInstance().player.sendMessage(Text.literal("ahoy"));
     }
 }

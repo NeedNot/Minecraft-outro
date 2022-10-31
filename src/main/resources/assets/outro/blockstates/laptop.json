@@ -1,6 +1,13 @@
 {
   "variants": {
-    "paused=true": { "model": "outro:block/laptop" },
-    "paused=false": { "model": "outro:block/laptop_play" }
+    "facing=north,paused=true": { "model": "outro:block/laptop", "uvlock": true },
+    "facing=east,paused=true":  { "model": "outro:block/laptop", "y":  90, "uvlock": true },
+    "facing=south,paused=true": { "model": "outro:block/laptop", "y": 180, "uvlock": true },
+    "facing=west,paused=true":  { "model": "outro:block/laptop", "y": 270, "uvlock": true },
+
+    "facing=north,paused=false": { "model": "outro:block/laptop_play", "uvlock": true },
+    "facing=east,paused=false":  { "model": "outro:block/laptop_play", "y":  90, "uvlock": true },
+    "facing=south,paused=false": { "model": "outro:block/laptop_play", "y": 180, "uvlock": true },
+    "facing=west,paused=false":  { "model": "outro:block/laptop_play", "y": 270, "uvlock": true }
   }
 }

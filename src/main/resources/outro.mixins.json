@@ -1,11 +1,11 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "net.neednot.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "required": true ,
+  "minVersion": "0.8" ,
+  "package": "net.neednot.mixin" ,
+  "compatibilityLevel": "JAVA_17" ,
   "mixins": [
     "SpriteMixin"
-  ],
+  ] ,
   "client": [
     "ClientPlayerEntityMixin"
   ],

@@ -15,6 +15,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.neednot.packets.Read;
 import org.lwjgl.glfw.GLFW;
 
 public class ClientOutro implements ClientModInitializer {
@@ -26,6 +27,7 @@ public class ClientOutro implements ClientModInitializer {
         // This code runs on the client only.
         // It is safe to use client-only classes here.
         // This is the place to register client-side only functionality.
+        Read.registerPacket();
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "net.neednot.solute", // The translation key of the keybinding's name
                 InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
