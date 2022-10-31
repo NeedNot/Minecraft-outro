@@ -3,9 +3,11 @@ package net.neednot.mixin;
 
 import com.mojang.brigadier.LiteralMessage;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.texture.Sprite;
 import net.minecraft.text.Text;
 import net.neednot.ClientOutro;
 import net.neednot.Outro;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,13 +20,16 @@ public abstract class SpriteMixin {
 
     @Shadow private int frameIndex;
 
+    @Shadow @Final private int frameCount;
+
+    @Shadow @Final private Sprite field_28469;
+
     @Inject(method = "tick()V", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
-        MinecraftClient.getInstance().player.sendMessage(Text.literal(String.valueOf(Outro.RESET)));
-        if (MinecraftClient.getInstance().player.input.pressingLeft) {
+        if ((MinecraftClient.getInstance().player.input.pressingLeft || Outro.RESET) && this.field_28469.getId().getNamespace().equals("outro")) {
             this.frameIndex = 0;
             this.frameTicks = 0;
+            Outro.RESET = false;
         }
-        MinecraftClient.getInstance().player.sendMessage(Text.literal("ahoy"));
     }
 }

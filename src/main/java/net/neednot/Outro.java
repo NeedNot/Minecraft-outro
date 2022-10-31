@@ -23,7 +23,7 @@ public class Outro implements ModInitializer {
 	public static final Identifier OUTRO_MUSIC = new Identifier("outro:outro");
     public static final String CLICK = "CLICK";
     public static SoundEvent PLAY_OUTRO = new SoundEvent(OUTRO_MUSIC);
-	public static int RESET;
+	public static boolean RESET;
 
 	@Override
 	public void onInitialize() {

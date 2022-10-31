@@ -113,11 +113,8 @@ public class Laptop extends HorizontalFacingBlock {
         if (world.isClient) {
             if (world.getBlockState(pos).get(PAUSED)) {
                 MinecraftClient.getInstance().getSoundManager().play(soundInstance);
-                Outro.RESET = 0;
-                ClientPlayNetworking.send(new Identifier("outro" , "click") , PacketByteBufs.empty());
             } else {
                 MinecraftClient.getInstance().getSoundManager().stopAll();
-                Outro.RESET = 1;
             }
         }
         world.setBlockState(pos, state.with(PAUSED, !world.getBlockState(pos).get(PAUSED)));
